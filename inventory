@@ -1,0 +1,15 @@
+
+[wsl]
+localhost
+
+[wsl:vars]
+ansible_connection=local
+
+[windows]
+172.18.64.1
+
+[windows:vars]
+ansible_user=ADS\joal
+ansible_connection=winrm
+ansible_winrm_transport=ntlm
+ansible_winrm_server_cert_validation=ignore

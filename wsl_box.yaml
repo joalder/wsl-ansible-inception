@@ -1,0 +1,58 @@
+---
+- name: WSL Debian Playbook
+  hosts: wsl
+  become: yes
+  tasks:
+    - name: Install google cloud packages key (Kubernetes)
+      apt_key:
+        url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+        state: present
+    - name: Add Kubernetes repo to apt sources
+      lineinfile:
+        path: /etc/apt/sources.list.d/kubernetes.list
+        line: deb https://apt.kubernetes.io/ kubernetes-xenial main
+        create: yes
+    - name: Install Helm package key
+      apt_key:
+        url: https://baltocdn.com/helm/signing.asc
+        state: present
+    - name: Add Kubernetes repo to apt sources
+      lineinfile:
+        path: /etc/apt/sources.list.d/helm-stable-debian.list
+        line: deb https://baltocdn.com/helm/stable/debian/ all main
+        create: yes
+    - name: Update cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+    - name: Upgrade dist
+      apt:
+        upgrade: dist
+    - name: Install base software
+      apt:
+        name:
+          - apt-transport-https
+          - gnupg2
+          - daemonize
+          - dbus-user-session
+          - fontconfig
+        state: present
+    - name: Install software
+      apt:
+        name:
+          - openjdk-11-jdk
+          - git
+          - htop
+          - curl
+#          - docker.io
+          - docker
+          - kubectl
+          - kubectx
+          - helm
+          - zsh
+          - netcat
+          - snapd
+          - python-pip
+          # Azure CLI?
+          # GCP CLI?
+        state: present

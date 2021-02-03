@@ -1,0 +1,13 @@
+---
+- name: WSL Debian Playbook
+  hosts: wsl
+  tasks:
+    - name: Install oh-my-zsh
+      shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# TOOD: oh-my-zsh config
+# fonts for oh-my-zsh? E.g. https://github.com/powerline/fonts/tree/master/RobotoMono
+#
+# Kustomize: https://kubectl.docs.kubernetes.io/installation/kustomize/binaries/
+# maybe global?
+

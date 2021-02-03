@@ -1,0 +1,50 @@
+---
+- name: Windows Playbook
+  hosts: windows
+  tasks:
+    - name: Say Hello
+      win_say:
+        start_sound_path: C:\Windows\Media\Windows Startup.wav
+        msg: Magic Windows configuration starting now...
+        speech_speed: 3
+    - name: Install basic software
+      win_chocolatey:
+        name:
+          - git
+          - googlechrome
+          - notepadplusplus
+          - windirstat
+          - 7zip.install
+          - vlc
+          - sysinternals
+          - winscp
+          - keepassxc
+          - spotify
+          - slack
+          - microsoft-windows-terminal
+          - citrix-receiver
+        state: present # could switch to latest to update software
+    - name: Install coder software
+      win_chocolatey:
+        name:
+          - python3
+          - nodejs-lts
+          - yarn
+          - vscode
+          - ojdkbuild11
+          - ojdkbuild
+          - kubernetes-cli
+          - docker-desktop
+          - azure-cli
+        state: present # could switch to latest to update software
+    - name: Set JAVA_HOME to JDK 11
+      win_environment:
+        state: present
+        name: JAVA_HOME
+        value: C:\Program Files\ojdkbuild\java-11-openjdk-11.0.9-2
+        level: machine
+    - name: Say Bye
+      win_say:
+        start_sound_path: C:\Windows\Media\tada.wav
+        msg: All done
+        speech_speed: -3
