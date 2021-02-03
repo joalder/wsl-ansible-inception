@@ -98,6 +98,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias kx='kubectx'
-
 KUBE_PS1_SEPARATOR=""
+
+func kcx () {
+  if [ $# -ne 2 ]; then
+  echo "Arguments missing! Usage: kcx <region> <stage>"
+    return
+  fi
+
+  export CL_REGION=$1
+  export CL_STAGE=$2
+  kubectx $1-$2
+}
