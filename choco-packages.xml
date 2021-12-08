@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packages:packages xmlns:packages="http://www.wpkg.org/packages"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.wpkg.org/packages ../xsd/packages.xsd">
+
+  <package id="git" packageParameters="'/GitAndUnixToolsOnPath /NoAutoCrlf'" />
+  <package id="googlechrome" />
+  <package id="notepadplusplus"/>
+  <package id="windirstat" />
+  <package id="7zip.install" />
+  <package id="vlc" />
+  <package id="sysinternals" />
+  <package id="winscp" />
+  <package id="keepassxc" />
+  <package id="spotify" />
+  <package id="slack" />
+  <package id="microsoft-windows-terminal" />
+  <package id="citrix-receiver" />
+  <package id="powertoys" />
+  <package id="python3" />
+  <package id="nvm" />
+  <package id="vscode" />
+  <package id="ojdkbuild11" />
+  <package id="ojdkbuild" />
+  <package id="kubernetes-cli" />
+  <package id="docker-desktop" />
+  <package id="azure-cli" />
+  <package id="keystore-explorer.portable" />
+  <package id="virtualbox" />
+  <package id="vagrant" />
+  <package id="openvpn" />
+</packages:packages>
