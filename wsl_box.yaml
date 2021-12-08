@@ -47,12 +47,17 @@
 #          - docker.io
           - docker
           - kubectl
-          - kubectx
+#          - kubectx
+          # krew with plugins ? https://krew.sigs.k8s.io/plugins/
           - helm
           - zsh
           - netcat
           - snapd
-          - python-pip
+          - python3-pip
+          - httpie
+          - jq
+          - unzip
           # Azure CLI?
           # GCP CLI?
+          # Dive? https://github.com/wagoodman/dive
         state: present

@@ -1,3 +1,5 @@
+# or just run the following command:
+# choco install git googlechrome notepadplusplus windirstat 7zip.install vlc sysinternals winscp keepassxc spotify slack microsoft-windows-terminal citrix-receiver python3 nvm  vscode ojdkbuild11 ojdkbuild kubernetes-cli docker-desktop azure-cli
 ---
 - name: Windows Playbook
   hosts: windows
@@ -23,19 +25,24 @@
           - slack
           - microsoft-windows-terminal
           - citrix-receiver
+          - powertoys
         state: present # could switch to latest to update software
     - name: Install coder software
       win_chocolatey:
         name:
           - python3
-          - nodejs-lts
-          - yarn
+#          - anaconda3 # does this conflict with python3
+#          - nodejs-lts
+#          - yarn
+          - nvm # might want to install a specific node version afterwards + yarn?
           - vscode
           - ojdkbuild11
           - ojdkbuild
           - kubernetes-cli
           - docker-desktop
           - azure-cli
+          # httpie also available?
+          # go ?
         state: present # could switch to latest to update software
     - name: Set JAVA_HOME to JDK 11
       win_environment:
