@@ -117,13 +117,13 @@ prompt_git() {
 
    if [[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]]; then
     repo_path=$(git rev-parse --git-dir 2>/dev/null)
-    dirty=$(parse_git_dirty)
+#    dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git rev-parse --short HEAD 2> /dev/null)"
-    if [[ -n $dirty ]]; then
-      prompt_segment yellow black
-    else
+#    if [[ -n $dirty ]]; then
+#      prompt_segment yellow black
+#    else
       prompt_segment green $CURRENT_FG
-    fi
+#    fi
 
     if [[ -e "${repo_path}/BISECT_LOG" ]]; then
       mode=" <B>"
