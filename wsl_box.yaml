@@ -60,4 +60,5 @@
           # Azure CLI?
           # GCP CLI?
           # Dive? https://github.com/wagoodman/dive
+          # loop, devkit, devkube https://github.com/adrianliechti/devkit etc. can install via brew
         state: present
