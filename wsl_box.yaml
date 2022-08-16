@@ -61,4 +61,6 @@
           # GCP CLI?
           # Dive? https://github.com/wagoodman/dive
           # loop, devkit, devkube https://github.com/adrianliechti/devkit etc. can install via brew
+          # BREW for linux https://docs.brew.sh/Homebrew-on-Linux
+          # GitHub CLI
         state: present
